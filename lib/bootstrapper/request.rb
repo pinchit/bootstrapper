@@ -1,4 +1,4 @@
-class Gon
+class Bootstrapper
   module Request
     class << self
 
