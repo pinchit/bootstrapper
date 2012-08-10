@@ -40,7 +40,7 @@ class Bootstrapper
           Bootstrapper::Request.id = request.object_id
           Bootstrapper::Request.env = request.env
         end
-        Gon
+        Bootstrapper
       end
 
       private
