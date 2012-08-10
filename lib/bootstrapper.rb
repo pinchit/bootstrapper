@@ -8,6 +8,7 @@ require "bootstrapper/version"
 
 class Bootstrapper
   class << self
+    
     def method_missing(method, *args, &block)
       if ( method.to_s =~ /=$/ )
         if public_method_name? method

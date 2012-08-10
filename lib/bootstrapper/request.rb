@@ -1,4 +1,3 @@
-
 class Gon
   module Request
     class << self
