@@ -52,8 +52,6 @@ class Bootstrapper
 
     end
 
-    end
-
   end
 end
 
