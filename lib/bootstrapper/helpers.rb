@@ -36,8 +36,21 @@ class Bootstrapper
     module InstanceMethods
 
       def bootstrap
-        Bootstrapper
+        if wrong_bootstrapper_request?
+          Bootstrapper::Request.id = request.object_id
+          Bootstrapper::Request.env = request.env
+        end
+        Gon
       end
+
+      private
+
+      def wrong_bootstrapper_request?
+        Bootstrapper::Request.env.blank? ||
+        Bootstrapper::Request.id != request.object_id
+      end
+
+    end
 
     end
 
