@@ -14,4 +14,5 @@ Gem::Specification.new do |gem|
   gem.name          = "bootstrapper"
   gem.require_paths = ["lib"]
   gem.version       = Bootstrapper::VERSION
+  gem.add_dependency('multi_json', '>= 1.3.0')
 end

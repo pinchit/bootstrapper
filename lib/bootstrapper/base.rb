@@ -1,3 +1,5 @@
+require 'multi_json'
+
 class Bootstrapper
   module Base
     class << self
@@ -11,9 +13,9 @@ class Bootstrapper
 
         data.each do |key, val|
           if cameled
-            script << "#{namespace}.#{key.to_s.camelize(:lower)}=#{val.to_json};"
+            script << "#{namespace}.#{key.to_s.camelize(:lower)}=#{MultiJson.dump(val)};"
           else
-            script << "#{namespace}.#{key.to_s}=#{val.to_json};"
+            script << "#{namespace}.#{key.to_s}=#{MultiJson.dump(val)};"
           end
         end
 
